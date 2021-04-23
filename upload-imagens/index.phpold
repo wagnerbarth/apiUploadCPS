@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Upload de arquivos em PHP</title>
+
+</head>
+
+<body>
+
+    <h1> Upload </h1>
+
+    <div>
+        <!-- 
+            application/x-www-form-urlencoded - Default. 
+                Todos os caracteres são codificados antes de serem enviados 
+                (os espaços são convertidos em símbolos "+" e caracteres especiais 
+                são convertidos em valores ASCII HEX)
+
+            multipart/form-data - formulários onde nenhum caractere é codificado. 
+                Esse valor é necessário quando você está usando formulários que 
+                têm um controle de upload de arquivo
+
+            text/plain - Os espaços são convertidos em símbolos "+", 
+                mas nenhum caractere especial é codificado
+        -->
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+
+            <label for="arquivo">Arquivo:</label>
+            <!-- type-"files" envia dados no formato de arquivos -->
+            <input type="file" name="arquivo" />
+
+            <br />
+            <br />
+
+            <input type="submit" value="Enviar" />
+
+        </form>
+    </div>
+
+</body>
+
+</html>
